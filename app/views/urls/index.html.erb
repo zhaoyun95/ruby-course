@@ -1,3 +1,5 @@
+<div class="row">
+<div class="twelve columns">
 <h1>Listing urls</h1>
 
 <table>
@@ -6,24 +8,21 @@
     <th>Url</th>
     <th>Comment</th>
     <th>Student</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Course</th>
   </tr>
 
-<% @urls.each do |url| %>
-  <tr>
-    <td><%= url.name %></td>
-    <td><%= url.url %></td>
-    <td><%= url.comment %></td>
-    <td><%= url.student_id %></td>
-    <td><%= link_to 'Show', url %></td>
-    <td><%= link_to 'Edit', edit_url_path(url) %></td>
-    <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% @students.each do |s| %>
+  <% s.urls.each do |u| %>
+    <tr>
+      <td><%= u.url %></td>
+      <td><%= u.comment %></td>
+      <td><%= s.name %></td>
+      <td><%= s.course %></td>
+    </tr>
+  <% end %>
 <% end %>
 </table>
+</div>
+<%= link_to 'Enter another URL', '/',:html => {:class => 'nav'} %>
+</div>
 
-<br />
-
-<%= link_to 'New Url', new_url_path %>

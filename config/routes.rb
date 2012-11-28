@@ -10,7 +10,8 @@ CloudRegistry::Application.routes.draw do
     resources :urls
   end
 
-  match '/urls' => 'urls#view'
+  match '/urls' => 'urls#index'
+  match '/welcome/create' =>'welcome#create'
   match '/students' => 'students#view'
 
   root :to => 'welcome#index'

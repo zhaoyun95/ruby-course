@@ -3,6 +3,7 @@ class UrlsController < ApplicationController
   # GET /urls.json
   def index
     @urls = Url.all
+    @students = Student.all
 
     respond_to do |format|
       format.html # index.html.erb

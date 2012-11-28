@@ -1,17 +1,26 @@
 <div class="row">
   <br>
 </div>
-<div class="row" style="background-color:#e5e3d9;padding:20px 0">
+<div class="row" style="background-color:#d9e3e5;padding:20px 0">
   <div class="four columns">
     <div class="panel">
-      <h3>Register Your App</h3>
-      <p>Use this form to enter the URL for your Heroku Rails Application.</p>
+      <h4>Link to Your App</h4>
+      <p>Use this form to enter the URL for your CS 132A Heroku Rails Application.</p>
     </div>
   </div>
 
   <div class="eight columns">
-    <h4>Register</h4>
+    <h3>Register</h3>
     <hr>
+    <%= form_for @student, :url => {:action => 'create'} do |f| %>
+      <%= f.label :USERID %>
+      <%= f.text_field :name %>
+      <%= f.label :URL %>
+      <input type="url" name="url" placeholder="Heroku URL"/>
+      <input type="submit" name="submit" value="Register" />
+    <% end %>
+    <!--
+
     <form>
       <label class="left">USERID</label><br>
       <input type="text" name="name" placeholder="Your CCSF USERID" />
@@ -21,6 +30,7 @@
       
       <input type="submit" name="submit" value="Register" />
     </form>
+    -->
   </div>
 </div>
 <div class="row urls">
@@ -34,9 +44,10 @@
       
     </div>
     <div class="eight columns">
-     
+      <% @urls.each do |a|%>
+        <%= a.name %>
+      <% end %>
     </div>
     <div class="two columns">
-    3
     </div>
 </div>
