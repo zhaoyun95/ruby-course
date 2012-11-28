@@ -1,9 +1,0 @@
-$background-color: #00f;
-$master-font-size: 15px;
-$master-line-height: 1.6;
-$font-family: 'Georgia, "Times New Roman", serif';
-
-body {
-  background-color: $background-color;
-  font: $master-font-size/$master-line-height $font-family;
-}
