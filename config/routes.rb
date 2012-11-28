@@ -10,6 +10,9 @@ CloudRegistry::Application.routes.draw do
     resources :urls
   end
 
+  match '/urls' => 'urls#view'
+  match '/students' => 'students#view'
+
   root :to => 'welcome#index'
 
   # The priority is based upon order of creation:
