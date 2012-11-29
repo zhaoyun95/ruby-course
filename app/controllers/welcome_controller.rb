@@ -16,13 +16,20 @@ class WelcomeController < ApplicationController
   end
 
   def create
+    @student = Student.new({:name =>params[:student][:name],:course => 'CS 132A'})
+
     respond_to do |format|
 #      raise(params.inspect)
-      if @student = Student.create!({:name =>params[:student][:name],:course => 'CS 132A'})
-        @student.urls.create!({:name => '',:url => params[:url]})
+      if @student.save and @student.urls.create!({:name => '',:url => params[:url]})
+        raise @student.inspect
         format.html { redirect_to  '/urls', notice: 'Url was successfully created.' }
         format.json { render json: @url, status: :created, location: @url }
+      else
+        raise @student.inspect
+        format.html { redirect_to  '/', notice: @student }
+        format.json { render json: @url.errors, status: :unprocessable_entity }
       end
+
     end
   end
 end

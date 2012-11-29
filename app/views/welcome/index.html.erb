@@ -13,6 +13,9 @@
     <h3>Register</h3>
     <hr>
     <%= form_for @student, :url => {:action => 'create'} do |f| %>
+      <div>
+      <%= f.error_messages %>
+    </div>
       <%= f.label :USERID %>
       <%= f.text_field :name %>
       <%= f.label :URL %>
