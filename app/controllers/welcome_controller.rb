@@ -23,9 +23,7 @@ class WelcomeController < ApplicationController
         format.html { redirect_to  '/urls', notice: 'Url was successfully created.' }
         format.json { render json: @url, status: :created, location: @url }
       else
-        raise @student.inspect
-        format.html { redirect_to  '/', notice: @student }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
+        format.html { redirect_to  '/'}
       end
 
     end
