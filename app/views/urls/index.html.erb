@@ -4,20 +4,17 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Comment</th>
-    <th>Student</th>
     <th>Course</th>
+    <th>Student</th>
+    <th>Url</th>
   </tr>
 
 <% @students.each do |s| %>
   <% s.urls.each do |u| %>
     <tr>
-      <td><a href="<%= u.url %>" title="<%= s.name %>"><%= u.url %></a></td>
-      <td><%= u.comment %></td>
-      <td><%= s.name %></td>
       <td><%= s.course %></td>
+      <td><%= s.name %></td>
+      <td><a href="<%= u.url %>" title="<%= s.name %>"><%= u.url %></a></td>
     </tr>
   <% end %>
 <% end %>
