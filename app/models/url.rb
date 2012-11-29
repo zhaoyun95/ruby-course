@@ -1,5 +1,5 @@
 class Url < ActiveRecord::Base
   attr_accessible :comment, :name, :student_id, :url
   belongs_to :student
-  validates :url, :format => {:with => /herokuapp.com$/, :message => 'Must be a Heroku sub-domain'}
+  validates :url, :format => {:with => /herokuapp.com\/?$/, :message => 'Must be a Heroku sub-domain'}
 end
