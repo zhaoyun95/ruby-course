@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
   # GET /urls.json
   def index
     @urls = Url.all
-    @all = Student.all
+    @students = Student.all
     @student = Student.new 
     
     respond_to do |format|
@@ -25,7 +25,6 @@ class WelcomeController < ApplicationController
       else
         format.html { redirect_to  '/'}
       end
-
     end
   end
 end
