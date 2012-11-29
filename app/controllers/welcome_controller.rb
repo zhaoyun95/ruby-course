@@ -19,9 +19,7 @@ class WelcomeController < ApplicationController
     @student = Student.new({:name =>params[:student][:name],:course => 'CS 132A'})
 
     respond_to do |format|
-#      raise(params.inspect)
       if @student.save and @student.urls.create!({:name => '',:url => params[:url]})
-        raise @student.inspect
         format.html { redirect_to  '/urls', notice: 'Url was successfully created.' }
         format.json { render json: @url, status: :created, location: @url }
       else
