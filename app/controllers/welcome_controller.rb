@@ -20,7 +20,7 @@ class WelcomeController < ApplicationController
 
     respond_to do |format|
       if @student.save and @student.urls.create!({:name => '',:url => params[:url]})
-        format.html { redirect_to  '/urls', notice: 'Url was successfully created.' }
+        format.html { redirect_to  '/', notice: 'Url was successfully created.' }
         format.json { render json: @url, status: :created, location: @url }
       else
         format.html { redirect_to  '/'}
