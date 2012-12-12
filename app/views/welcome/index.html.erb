@@ -51,7 +51,7 @@
           <th>Url</th>
         </tr>
      
-      <% @students.each do |s|%>
+      <% @students.reverse.each do |s|%>
         <% s.urls.each do |u| %>
           <tr>
             <td><%= s.course %></td>
